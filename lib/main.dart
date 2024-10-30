@@ -16,7 +16,7 @@ void main() {
 class MyApp extends StatefulWidget {
   final Account account;
 
-  MyApp({required this.account});
+  const MyApp({super.key, required this.account});
 
   @override
   MyAppState createState() {
@@ -60,23 +60,23 @@ class MyAppState extends State<MyApp> {
             Text(loggedInUser != null
                 ? 'Logged in as ${loggedInUser!.name}'
                 : 'Not logged in'),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
               controller: emailController,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(labelText: 'Email'),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
               controller: passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(labelText: 'Password'),
               obscureText: true,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
               controller: nameController,
-              decoration: InputDecoration(labelText: 'Name'),
+              decoration: const InputDecoration(labelText: 'Name'),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
@@ -84,22 +84,22 @@ class MyAppState extends State<MyApp> {
                   onPressed: () {
                     login(emailController.text, passwordController.text);
                   },
-                  child: Text('Login'),
+                  child: const Text('Login'),
                 ),
-                SizedBox(width: 16.0),
+                const SizedBox(width: 16.0),
                 ElevatedButton(
                   onPressed: () {
                     register(emailController.text, passwordController.text,
                         nameController.text);
                   },
-                  child: Text('Register'),
+                  child: const Text('Register'),
                 ),
-                SizedBox(width: 16.0),
+                const SizedBox(width: 16.0),
                 ElevatedButton(
                   onPressed: () {
                     logout();
                   },
-                  child: Text('Logout'),
+                  child: const Text('Logout'),
                 ),
               ],
             ),
