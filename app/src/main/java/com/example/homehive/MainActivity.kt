@@ -1,6 +1,7 @@
 package com.example.homehive
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -16,10 +17,11 @@ import io.appwrite.Client
 import io.appwrite.services.Account
 
 class MainActivity : ComponentActivity() {
-    val client = Client(context).setProject("671d2bf50008c6a1134d")
+//    val client = Client(this).setProject("671d2bf50008c6a1134d")
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
-
+//        Log.d("Appwrite", "client: $client")
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
